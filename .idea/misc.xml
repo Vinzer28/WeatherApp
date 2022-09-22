@@ -6,9 +6,13 @@
         <entry key="..\:/Users/vinzer.apolonio/Desktop/androidProjects/MyWeatherApplication/app/src/main/res/drawable/btn_style.xml" value="0.10666666666666667" />
         <entry key="..\:/Users/vinzer.apolonio/Desktop/androidProjects/MyWeatherApplication/app/src/main/res/drawable/ic_add_24.xml" value="0.1" />
         <entry key="..\:/Users/vinzer.apolonio/Desktop/androidProjects/MyWeatherApplication/app/src/main/res/drawable/ic_search_24.xml" value="0.1" />
-        <entry key="..\:/Users/vinzer.apolonio/Desktop/androidProjects/MyWeatherApplication/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/vinzer.apolonio/Desktop/androidProjects/MyWeatherApplication/app/src/main/res/layout/activity_five_days_forecast.xml" value="0.22" />
+        <entry key="..\:/Users/vinzer.apolonio/Desktop/androidProjects/MyWeatherApplication/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/vinzer.apolonio/Desktop/androidProjects/MyWeatherApplication/app/src/main/res/layout/activity_manage_cities.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/vinzer.apolonio/Desktop/androidProjects/MyWeatherApplication/app/src/main/res/layout/btn_style.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/vinzer.apolonio/Desktop/androidProjects/MyWeatherApplication/app/src/main/res/layout/city_list_item.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/vinzer.apolonio/Desktop/androidProjects/MyWeatherApplication/app/src/main/res/layout/dialog_custom_progress.xml" value="0.1" />
+        <entry key="..\:/Users/vinzer.apolonio/Desktop/androidProjects/MyWeatherApplication/app/src/main/res/layout/list_item.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/vinzer.apolonio/Desktop/androidProjects/MyWeatherApplication/app/src/main/res/menu/menu_main.xml" value="0.1527777777777778" />
       </map>
     </option>

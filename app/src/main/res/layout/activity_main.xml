@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/light_theme">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:id="@+id/bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="@drawable/light_theme"
         android:padding="16dp"
         tools:context=".MainActivity">
 
@@ -63,12 +63,6 @@
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/ic_search_24" />
 
-            <ImageButton
-                android:id="@+id/addCity"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_add_24" />
         </LinearLayout>
 
 
@@ -395,7 +389,7 @@
             android:gravity="center_horizontal">
 
             <Button
-                android:id="@+id/forecast"
+                android:id="@+id/futureForecast"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_style"
@@ -407,7 +401,7 @@
                 app:cornerRadius="@null" />
 
             <Button
-                android:id="@+id/places"
+                android:id="@+id/manageCity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_style"
