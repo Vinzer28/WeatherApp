@@ -13,6 +13,7 @@ import android.icu.util.TimeZone
 import android.location.Location
 import android.location.LocationManager
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
@@ -22,10 +23,13 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Switch
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
+import com.example.myweatherapplication.activities.ManageCities
+import com.example.myweatherapplication.activities.fiveDaysForecast
 import com.example.myweatherapplication.databinding.ActivityMainBinding
-import com.example.myweatherapplication.models.WeatherResponse
+import com.example.myweatherapplication.currentForecastModels.WeatherResponse
 import com.example.myweatherapplication.network.WeatherService
 import com.google.android.gms.location.*
 import com.google.gson.Gson
@@ -54,9 +58,31 @@ class MainActivity : AppCompatActivity() {
 // To bo used in Dark Mode Feature
     internal  lateinit var nightSwitch : Switch
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        binding.futureForecast.setOnClickListener{
+            Constants.Location = binding.tvName.text.toString()
+            val intent = Intent(this@MainActivity, fiveDaysForecast::class.java)
+            startActivity(intent)
+        }
+        binding.manageCity.setOnClickListener{
+            val intent = Intent(this@MainActivity, ManageCities::class.java)
+            startActivity(intent)
+        }
+
+        binding.searchButton.setOnClickListener{
+            Constants.Location = binding.otherLocation.text.toString()
+            var locationinput : String = binding.otherLocation.text.toString()
+            if (locationinput == ""){
+                getLocationWeatherDetails()
+            } else {
+                getCurrentLocation()
+            }
+
+        }
 
         mFusedLocationClient  = LocationServices.getFusedLocationProviderClient(this)
 
@@ -194,6 +220,7 @@ class MainActivity : AppCompatActivity() {
             showCustomProgressDialog()
 
             listCall.enqueue(object : Callback<WeatherResponse>{
+                @RequiresApi(Build.VERSION_CODES.N)
                 @SuppressLint("SetTextI18n")
                 override fun onResponse(response: Response<WeatherResponse>?, retrofit: Retrofit?) {
                     if(response!!.isSuccess){
@@ -250,6 +277,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
+    @SuppressLint("SetTextI18n")
     private fun setupUI(){
 
         val weatherResponseJsonString = mSharedPreferences.getString(Constants.WEATHER_RESPONSE_DATA, "")
@@ -303,6 +332,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 //    Time Format for Sunrise and Sunset Time
+    @RequiresApi(Build.VERSION_CODES.N)
     private fun timeStamp(timex : Long) : String? {
         val date = Date(timex * 1000L)
         @SuppressLint("SimpleDateFormat")
