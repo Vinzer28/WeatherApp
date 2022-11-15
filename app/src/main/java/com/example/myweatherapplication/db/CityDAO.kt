@@ -14,6 +14,7 @@ interface CityDAO {
     fun deleteCity(manageCities: ManageCities)
     @Query ("DELETE FROM City_data_table")
     fun deleteAll()
+//    @Query("SELECT city_name FROM City_data_table")
     @Query("SELECT * FROM City_data_table")
-    fun getAllCity() : LiveData<List<ManageCities>>
+    fun getAllCities() : LiveData<List<ManageCities>>
 }

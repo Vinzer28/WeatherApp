@@ -8,8 +8,8 @@ import com.example.myweatherapplication.R
 import com.example.myweatherapplication.databinding.CityListItemBinding
 import com.example.myweatherapplication.db.ManageCities
 
-class CityAdapter (private val citylist: List<ManageCities>
-                   ,private val clickListener:(ManageCities)->Unit) : RecyclerView.Adapter<MyViewHolder>()
+class CityAdapter(private val citylist: List<ManageCities>
+                  , private val clickListener:(ManageCities)->Unit) : RecyclerView.Adapter<MyViewHolder>()
 {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -31,7 +31,7 @@ class CityAdapter (private val citylist: List<ManageCities>
 class MyViewHolder(val binding: CityListItemBinding): RecyclerView.ViewHolder(binding.root){
 
     fun bind(manageCities: ManageCities,clickListener:(ManageCities)->Unit){
-        binding.nameTextView.text = manageCities.CityName
+        binding.nameTextView.text = manageCities.cityName
         binding.listItemLayout.setOnClickListener{
             clickListener(manageCities)
         }
